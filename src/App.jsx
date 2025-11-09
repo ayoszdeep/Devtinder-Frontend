@@ -9,6 +9,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import appStore from './utils/appStore.js';
 
+import Connection from './components/Connection.jsx';
+import Request from './components/Request.jsx';
+
 function App() {
   return (
     <Provider store={appStore}>
@@ -16,8 +19,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Body />}>
             <Route index element={<Feed />} />
-            <Route path="login" element={<Login />} />
-            <Route path="about" element={<About />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/connection" element={<Connection />} />
+            <Route path="/request" element={<Request/>} />
           </Route>
         </Routes>
       </BrowserRouter>

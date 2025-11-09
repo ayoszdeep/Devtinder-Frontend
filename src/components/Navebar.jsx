@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { removeUser } from '../utils/userSlice';
 import axios from 'axios';// ✅ add this
 import { useNavigate } from 'react-router-dom';
+
   
 
 const Navbar = () => {
@@ -51,7 +52,9 @@ const Navbar = () => {
 
           <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box w-52 p-2 shadow text-black">
             <li><Link to="/profile">Profile</Link></li>   {/* ✅ Works */}
-            <li><Link to="/settings">Settings</Link></li> {/* ✅ Works */}
+            <li><Link to="/connection">Connections</Link></li> {/* ✅ Works */}
+            <li><Link to="/request">Requests</Link></li> {/* ✅ Works */}
+            
             <li><a onClick={handleLogout}>Logout</a></li>   {/* logout logic will come later */}
           </ul>
         </div>

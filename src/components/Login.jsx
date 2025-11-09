@@ -5,7 +5,7 @@ import { addUser } from '../utils/userSlice';
 import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
+  const [emailId, setEmailId] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const res = await axios.post('http://localhost:7777/login', {
-        email,
+        emailId,
         password
       }, { withCredentials: true });
 
@@ -32,8 +32,8 @@ const Login = () => {
           <label className="block mb-1 text-white">Email Id:</label>
           <input 
             type="email" 
-            value={email}
-            onChange={e => setEmail(e.target.value)}
+            value={emailId}
+            onChange={e => setEmailId(e.target.value)}
             className="block w-full px-3 py-2 border rounded"
             required 
           />
