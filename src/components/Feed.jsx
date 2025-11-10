@@ -1,7 +1,10 @@
 import axios from 'axios'
 import React, { use } from 'react'
 import { useDispatch } from 'react-redux'
-import UserCard from './userCard'
+import UserCard from './UserCard'
+import { addFeed } from '../utils/feedSLice'
+import { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 
 const Feed = () => {
   
@@ -20,7 +23,7 @@ const Feed = () => {
       }, []);
 
 
-
+    if(feed.length<=0) return<h1>No Feed  </h1>
   return feed && (
     <div><UserCard user={feed}/></div>
   )

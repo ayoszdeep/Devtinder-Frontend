@@ -9,7 +9,9 @@ const feedSlice=createSlice({
             
         },
         removeFeed:(state,action)=>{
-            return null;
+            const newFeed=state.filer(user=>user._id!==action.payload.id)
+            return newFeed;
+            console.log(newFeed);
         }
 
     }
