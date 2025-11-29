@@ -4,7 +4,9 @@ import React from 'react';
 import About from './components/About.jsx';
 import Login from './components/Login.jsx';
 import Body from './components/Body.jsx';
-import Feed from './components/Feed.jsx';   // ✅ IMPORTANT
+import Feed from './components/Feed.jsx';
+import Profile from './components/Profile.jsx';
+import EditProfile from './components/EditProfile.jsx';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import appStore from './utils/appStore.js';
@@ -17,9 +19,11 @@ function App() {
     <Provider store={appStore}>
       <BrowserRouter>
         <Routes>
+          <Route path="/login" element={<Login />} />
           <Route path="/" element={<Body />}>
             <Route index element={<Feed />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile/edit" element={<EditProfile />} />
             <Route path="/about" element={<About />} />
             <Route path="/connection" element={<Connection />} />
             <Route path="/request" element={<Request/>} />

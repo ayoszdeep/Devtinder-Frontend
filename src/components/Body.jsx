@@ -11,22 +11,24 @@ const Body = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user=useSelector((state)=>state.user);
-if(user)
- { const fetchUser = async () => {
+
+  const fetchUser = async () => {
     try {
       const res = await axios.get('http://localhost:7777/profile/view', { withCredentials: true });
-      dispatch(addUser(res.data));
-      
+      dispatch(addUser(res.data.data));
     } catch (error) {
-      if(error.response.status === 401 || error.response.status === 403)
-      {navigate('/login');}
-      
+      if(error.response?.status === 401 || error.response?.status === 403) {
+        navigate('/login');
+      }
       console.error(error);
     }
-    useEffect(() => {
-    fetchUser();
+  };
+
+  useEffect(() => {
+    if(!user) {
+      fetchUser();
+    }
   }, [])
-  }}
   return (
     <div>
         <Navebar/>
