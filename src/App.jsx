@@ -1,37 +1,39 @@
-// App.jsx
-import './App.css';
-import React from 'react';
-import About from './components/About.jsx';
-import Login from './components/Login.jsx';
-import Body from './components/Body.jsx';
-import Feed from './components/Feed.jsx';
-import Profile from './components/Profile.jsx';
-import EditProfile from './components/EditProfile.jsx';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import appStore from './utils/appStore.js';
-
-import Connection from './components/Connection.jsx';
-import Request from './components/Request.jsx';
+import './App.css'
+import React, { useEffect } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import appStore from './store/index'
+import AppLayout from './components/layout/AppLayout'
+import LoginPage from './pages/LoginPage'
+import FeedPage from './pages/FeedPage'
+import ProfilePage from './pages/ProfilePage'
+import ConnectionsPage from './pages/ConnectionsPage'
+import RequestsPage from './pages/RequestsPage'
+import AboutPage from './pages/AboutPage'
+import MouseGlow from './components/ui/MouseGlow'
+import { applyTheme } from './config/theme'
 
 function App() {
+  useEffect(() => { applyTheme() }, [])
+
   return (
     <Provider store={appStore}>
+      <MouseGlow />
       <BrowserRouter>
         <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Body />}>
-            <Route index element={<Feed />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/profile/edit" element={<EditProfile />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/connection" element={<Connection />} />
-            <Route path="/request" element={<Request/>} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/" element={<AppLayout />}>
+            <Route index element={<FeedPage />} />
+            <Route path="profile" element={<ProfilePage />} />
+            <Route path="profile/edit" element={<ProfilePage />} />
+            <Route path="about" element={<AboutPage />} />
+            <Route path="connection" element={<ConnectionsPage />} />
+            <Route path="request" element={<RequestsPage />} />
           </Route>
         </Routes>
       </BrowserRouter>
     </Provider>
-  );
+  )
 }
 
-export default App;
+export default App
