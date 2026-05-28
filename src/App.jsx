@@ -11,6 +11,7 @@ import ConnectionsPage from './pages/ConnectionsPage'
 import RequestsPage from './pages/RequestsPage'
 import AboutPage from './pages/AboutPage'
 import MouseGlow from './components/ui/MouseGlow'
+import ClickSparkle from './components/ui/ClickSparkle'
 import { applyTheme } from './config/theme'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
   return (
     <Provider store={appStore}>
       <MouseGlow />
+      <ClickSparkle />
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<LoginPage />} />

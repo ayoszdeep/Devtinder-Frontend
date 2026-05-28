@@ -11,12 +11,26 @@ html {
   scroll-behavior: smooth;
 }
 
+@keyframes click-burst {
+  0% { transform: scale(0.3); opacity: 0.95; filter: brightness(1.3) drop-shadow(0 0 2px currentColor); }
+  100% { transform: scale(1.1); opacity: 0; filter: brightness(1) drop-shadow(0 0 0px currentColor); }
+}
+.animate-click-burst {
+  animation: click-burst 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-base-200);
+  background-image: 
+    linear-gradient(to right, color-mix(in srgb, var(--color-base-content) 8%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--color-base-content) 8%, transparent) 1px, transparent 1px);
+  background-size: 40px 40px;
+  min-height: 100vh;
 }
 
 /* ===== Links ===== */

@@ -2,6 +2,7 @@
 @plugin "daisyui";
 
 [data-theme="darkpink"] {
+  --color-login-btn: #D63B6B;
   --color-primary: oklch(0.68 0.24 340);
   --color-primary-content: oklch(0.98 0.01 340);
   --color-secondary: oklch(0.55 0.2 290);
@@ -22,6 +23,33 @@
   --color-warning-content: oklch(0.2 0.02 80);
   --color-error: oklch(0.62 0.24 20);
   --color-error-content: oklch(0.95 0.01 20);
+  --radius-box: 0.75rem;
+  --radius-field: 0.5rem;
+  --radius-selector: 0.5rem;
+}
+
+[data-theme="lightorange"] {
+  --color-login-btn: #ff7300;
+  --color-primary: #ff7300;
+  --color-primary-content: #ffffff;
+  --color-secondary: #ff9d42;
+  --color-secondary-content: #ffffff;
+  --color-accent: #ffb703;
+  --color-accent-content: #000000;
+  --color-neutral: #ffc28a;
+  --color-neutral-content: #ff7300;
+  --color-base-100: #fff5ed;
+  --color-base-200: #ffe8d6;
+  --color-base-300: #ffd1af;
+  --color-base-content: #1a1a1a;
+  --color-info: #3abff8;
+  --color-info-content: #ffffff;
+  --color-success: #36d399;
+  --color-success-content: #ffffff;
+  --color-warning: #fbbd23;
+  --color-warning-content: #ffffff;
+  --color-error: #f87272;
+  --color-error-content: #ffffff;
   --radius-box: 0.75rem;
   --radius-field: 0.5rem;
   --radius-selector: 0.5rem;

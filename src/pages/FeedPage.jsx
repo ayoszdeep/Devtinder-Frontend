@@ -25,8 +25,8 @@ const FeedPage = () => {
 
   if (!Array.isArray(feed) || feed.length === 0) {
     return (
-      <div className="flex justify-center items-center min-h-screen bg-base-200">
-        <div className="text-center p-8">
+      <div className="flex justify-center items-center min-h-[calc(100vh-8rem)]">
+        <div className="text-center p-8 bg-base-100/60 backdrop-blur-3xl rounded-[2rem] border border-primary/20 shadow-lg">
           <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-base-300 flex items-center justify-center">
             <span className="text-3xl">👀</span>
           </div>
@@ -38,7 +38,7 @@ const FeedPage = () => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-8rem)] bg-base-200 p-4">
+    <div className="flex flex-col items-center justify-center min-h-[calc(100vh-8rem)] p-4">
       <div className="w-full max-w-md">
         <UserCard key={feed[0]._id} user={feed[0]} />
         <div className="flex justify-center gap-1.5 mt-6">

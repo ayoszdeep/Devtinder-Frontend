@@ -42,7 +42,7 @@ function RequestsPage() {
   const defaultPhotoUrl = "https://via.placeholder.com/150"
 
   return (
-    <div className="min-h-screen bg-base-200 py-8 px-4">
+    <div className="min-h-[calc(100vh-8rem)] py-8 px-4">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-base-content mb-2 flex items-center justify-center gap-3">
